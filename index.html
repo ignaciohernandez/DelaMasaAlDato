@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="De la masa al dato: un recetario de panadería, pastelería y cocina casera.">
+  <title>De la masa al dato · El Recetario</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="De la masa al dato, ir al inicio">
+        <img src="assets/logo-dark.svg" alt="De la masa al dato">
+      </a>
+
+      <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav">
+        <span></span><span></span><span></span>
+        <span class="sr-only">Abrir menú</span>
+      </button>
+
+      <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
+        <a href="#historia">Nuestra historia</a>
+        <a href="#recetario">Recetario</a>
+        <a href="#proyecto">Proyecto</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+
+      <button class="fav-link" id="favorites-toggle" type="button" aria-pressed="false">
+        <span class="heart" aria-hidden="true">♥</span>
+        <span class="fav-link-text">Mis recetas</span>
+        <span class="fav-count" id="fav-count">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO (clon) -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-inner">
+        <p class="hero-kicker">Un recetario · Buenos Aires</p>
+        <p class="hero-french">La cocina también se comparte.</p>
+        <h1 id="hero-title">La cocina de siempre,<br>con recetas nuevas.</h1>
+        <p class="hero-lead">Panadería, pastelería y cocina casera.<br>Recetas reales, técnicas simples y su tiempo.</p>
+        <a class="btn btn-outline" href="#recetario">Explorá el recetario</a>
+      </div>
+      <a class="hero-scroll" href="#historia" aria-label="Desplazarse a la siguiente sección">↓</a>
+    </section>
+
+    <!-- EL OFICIO (clon) -->
+    <section class="section section-oficio" id="historia" aria-labelledby="oficio-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Nuestra historia</p>
+          <h2 id="oficio-title">El oficio lleva tiempo.</h2>
+          <p class="section-steps">Amasar. Fermentar. Laminar.<br>Esperar. Hornear.</p>
+        </div>
+
+        <div class="split">
+          <div class="split-copy">
+            <p>Nuestra historia empieza con una idea simple: un lugar para compartir recetas. Tomamos el estilo de una boulangerie porteña y lo pusimos al servicio de una cocina propia, casera y hecha con tiempo.</p>
+            <p>Acá no vendemos pan: compartimos recetas. Cada una tiene su origen, sus ingredientes y su paso a paso. Elegí la que quieras, guardala y volvé cuando tengas tiempo.</p>
+          </div>
+          <figure class="split-media">
+            <img src="assets/oficio-pan.jpg" alt="Panes caseros recién horneados sobre una mesa">
+            <figcaption>Harina, tiempo y una receta abierta</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- NUESTRA MANERA DE HACER (clon) -->
+    <section class="section section-manera" aria-labelledby="manera-title">
+      <div class="container">
+        <p class="eyebrow">Nuestra manera de hacer</p>
+        <h2 id="manera-title">La técnica es el origen.<br>La curiosidad, la casa.</h2>
+        <p class="section-lead">Acá reunimos recetas de panadería y pastelería de distintos países, con sus ingredientes y su paso a paso. Un lugar para encontrar, guardar y volver a hacer tus recetas favoritas.</p>
+        <figure class="wide-media">
+          <img src="assets/bolleria-generica.jpg" alt="Croissants y masas laminadas recién horneadas">
+        </figure>
+      </div>
+    </section>
+
+    <!-- LO QUE HACEMOS (clon) -->
+    <section class="section section-productos" id="productos" aria-labelledby="productos-title">
+      <div class="container">
+        <p class="eyebrow">Lo que hacemos</p>
+        <h2 id="productos-title">Primero,<br>el producto.</h2>
+
+        <div class="product-grid">
+          <article class="product-card">
+            <div class="product-card-media">
+              <img src="assets/producto-panaderia.jpg" alt="Panes rústicos recién horneados sobre una mesa de madera" loading="lazy">
+            </div>
+            <div class="product-card-body">
+              <span class="product-number">01</span>
+              <h3>Panadería</h3>
+              <p>Panes y baguettes elaborados respetando fermentaciones y tiempos de reposo.</p>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-card-media">
+              <img src="assets/producto-bolleria.jpg" alt="Croissants y masas laminadas doradas sobre una bandeja" loading="lazy">
+            </div>
+            <div class="product-card-body">
+              <span class="product-number">02</span>
+              <h3>Bollería</h3>
+              <p>Croissants y masas laminadas trabajadas con técnica, manteca y tiempo.</p>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-card-media">
+              <img src="assets/producto-pasteleria.jpg" alt="Torta casera decorada con frutas sobre una mesa de madera" loading="lazy">
+            </div>
+            <div class="product-card-body">
+              <span class="product-number">03</span>
+              <h3>Pastelería</h3>
+              <p>Clásicos franceses y recetas que forman parte de la historia de la pastelería.</p>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="product-card-media">
+              <img src="assets/producto-cocina.jpg" alt="Utensilios de cocina de madera sobre una mesa" loading="lazy">
+            </div>
+            <div class="product-card-body">
+              <span class="product-number">04</span>
+              <h3>Cocina</h3>
+              <p>La cocina francesa también es parte de nuestra identidad.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- EL RECETARIO (FUNCIONALIDAD NUEVA - API REST)                  -->
+    <!-- ============================================================ -->
+    <section class="section section-recetario" id="recetario" aria-labelledby="recetario-title">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <p class="eyebrow">Lo que compartimos</p>
+          <h2 id="recetario-title">El recetario.</h2>
+          <p class="section-lead">Recetas de panadería y pastelería de todo el mundo, reunidas en un solo lugar. Elegí una, guardala y cocinala a tu tiempo.</p>
+        </div>
+
+        <div class="recipe-toolbar">
+          <div class="search-wrap">
+            <span class="search-icon" aria-hidden="true">⌕</span>
+            <input type="search" id="recipe-search" placeholder="Buscar una receta…" aria-label="Buscar recetas" autocomplete="off">
+          </div>
+
+          <div class="chips" role="group" aria-label="Filtrar recetas por origen">
+            <button class="chip is-active" type="button" data-area="Todas" aria-pressed="true">Todas</button>
+            <button class="chip" type="button" data-area="France" aria-pressed="false">Francia</button>
+            <button class="chip" type="button" data-area="Argentina" aria-pressed="false">Argentina</button>
+            <button class="chip" type="button" data-area="Uruguayan" aria-pressed="false">Uruguay</button>
+          </div>
+        </div>
+
+        <div class="recipe-meta">
+          <p id="results-label" aria-live="polite">Cargando recetas…</p>
+          <button class="text-btn" id="clear-favorites-view" type="button" hidden>Ver todas las recetas →</button>
+        </div>
+
+        <div id="recipe-status" class="recipe-status" aria-live="polite"></div>
+        <div id="recipe-grid" class="recipe-grid"></div>
+
+        <div class="load-more" id="load-more-wrap" hidden>
+          <p class="load-more-info" id="load-more-info"></p>
+          <button class="btn btn-outline" id="load-more" type="button">Ver más recetas</button>
+        </div>
+
+        <p class="api-credit">© De la masa al dato · Recetas para cocinar, guardar y compartir.</p>
+      </div>
+    </section>
+
+    <!-- UN CROISSANT RECONOCIDO (clon) -->
+    <section class="section section-premio" aria-labelledby="premio-title">
+      <div class="container split split--reverse">
+        <div class="split-copy">
+          <p class="eyebrow">Un dato curioso</p>
+          <h2 id="premio-title">El oficio también<br>se pone a prueba.</h2>
+          <p>En nuestro recetario hay más de <strong>160 recetas de postres</strong> de decenas de países: alfajores argentinos, flan uruguayo, tartas francesas y mucho más.</p>
+          <p>Cada ficha trae ingredientes, cantidades y el paso a paso. La cocina de siempre, lista para poner en práctica.</p>
+          <p class="signature">Manteca. Laminado. Fermentación. Cocción.</p>
+        </div>
+        <figure class="split-media">
+          <img src="assets/dato-cocina.jpg" alt="Ingredientes y utensilios de cocina sobre una mesa">
+        </figure>
+      </div>
+    </section>
+
+    <!-- ENCONTRANOS (clon) -->
+    <section class="section section-proyecto" id="proyecto" aria-labelledby="proyecto-title">
+      <div class="container section-head section-head--center">
+        <p class="eyebrow">Sobre el proyecto</p>
+        <h2 id="proyecto-title">Hecho con tiempo<br>y harina.</h2>
+        <address>
+          Parque Chas, CABA
+        </address>
+        <p>Un recetario propio<br>Hecho en Buenos Aires</p>
+        <a class="btn btn-outline" href="#recetario">Ver el recetario</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" id="contacto">
+    <div class="container footer-inner">
+      <p class="footer-tagline">De la masa al dato<br><em>Un recetario para todos.</em></p>
+      <img class="footer-logo" src="assets/logo-light.svg" alt="De la masa al dato">
+      <p class="footer-legend">Cocina casera · Parque Chas, CABA · Hecho con tiempo</p>
+      <div class="footer-links">
+        <a href="#recetario">Nuestras recetas</a>
+        <a href="#top">Volver arriba</a>
+      </div>
+      <div class="social-links" aria-label="Redes sociales">
+        <a class="social-link" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+            <circle cx="12" cy="12" r="4"></circle>
+            <circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"></circle>
+          </svg>
+        </a>
+        <a class="social-link" href="https://wa.me/" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" title="WhatsApp">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M20.5 11.6a8.5 8.5 0 0 1-12.4 7.6L3 20.5l1.4-4.8A8.5 8.5 0 1 1 20.5 11.6Z"></path>
+            <path d="M9 8.7c.3-.5.7-.6 1-.6h.7c.3 0 .5.1.8.6l.6 1.4c.1.3 0 .5-.2.7l-.5.5c.4.8 1 1.5 1.8 1.9l.5-.5c.2-.2.4-.2.7-.1l1.4.6c.5.2.6.5.6.9v.6c0 .4-.3.8-.8.9-.7.2-1.7.1-2.6-.3-1.1-.5-2.1-1.5-2.6-2.6-.4-.9-.5-1.9-.3-2.6.1-.5.4-.8.9-.9Z" fill="currentColor" stroke="none"></path>
+          </svg>
+        </a>
+        <a class="social-link" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+            <path d="M13.6 21v-8.2h2.8l.4-3.2h-3.2V7.7c0-.9.3-1.6 1.7-1.6h1.6V3.2c-.3 0-1.3-.2-2.5-.2-2.5 0-4.2 1.5-4.2 4.3v2.3H7.4v3.2h2.8V21h3.4Z"></path>
+          </svg>
+        </a>
+      </div>
+      <p class="footer-copy">© 2026 De la masa al dato</p>
+    </div>
+  </footer>
+
+  <dialog id="recipe-dialog" class="recipe-dialog" aria-labelledby="dialog-title">
+    <div class="dialog-inner">
+      <button class="dialog-close" id="dialog-close" type="button" aria-label="Cerrar receta">×</button>
+      <div id="dialog-content">
+        <h2 id="dialog-title" class="sr-only">Detalle de la receta</h2>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="js/local-images.js?v=4" defer></script>
+  <script src="js/api.js?v=4" defer></script>
+  <script src="js/favorites.js?v=4" defer></script>
+  <script src="js/translate.js?v=4" defer></script>
+  <script src="js/recipes.js?v=4" defer></script>
+  <script src="js/app.js?v=4" defer></script>
+</body>
+</html>

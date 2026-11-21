@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 150" role="img" aria-label="De la masa al dato">
+  <g fill="none" stroke="#f7f4ed" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M28 96 C28 52 60 26 96 26 C132 26 162 52 162 96 C146 76 124 66 96 66 C68 66 44 76 28 96 Z"/>
+    <path d="M60 44 C66 56 68 68 65 80" stroke-width="3"/>
+    <path d="M96 30 C100 44 100 56 96 66" stroke-width="3"/>
+    <path d="M132 44 C126 56 124 68 127 80" stroke-width="3"/>
+  </g>
+  <circle cx="96" cy="112" r="3" fill="#d9bfa5"/>
+  <circle cx="78" cy="120" r="2" fill="#d9bfa5"/>
+  <circle cx="114" cy="120" r="2" fill="#d9bfa5"/>
+  <g fill="#f7f4ed" font-family="Georgia, 'Times New Roman', serif" font-weight="600">
+    <text x="190" y="66" font-size="38" letter-spacing="1">DE LA MASA</text>
+    <text x="190" y="112" font-size="38" letter-spacing="6">AL DATO</text>
+  </g>
+  <text x="192" y="138" fill="#b9b0a3" font-family="Arial, Helvetica, sans-serif" font-size="10" letter-spacing="3.5">EL RECETARIO · BUENOS AIRES</text>
+</svg>
