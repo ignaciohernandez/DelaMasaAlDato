@@ -26,6 +26,7 @@
       <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
         <a href="#historia">Nuestra historia</a>
         <a href="#recetario">Recetario</a>
+        <a href="#clima">Clima</a>
         <a href="#proyecto">Proyecto</a>
         <a href="#contacto">Contacto</a>
       </nav>
@@ -195,6 +196,42 @@
       </div>
     </section>
 
+    <!-- EL CLIMA TAMBIÉN COCINA -->
+    <section class="section section-weather" id="clima" aria-labelledby="weather-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Panadería y clima</p>
+          <h2 id="weather-title">El clima también cocina.</h2>
+          <p class="section-lead">La temperatura del ambiente puede acelerar o hacer más lenta la fermentación de las masas con levadura. Consultá las condiciones exteriores actuales de Buenos Aires como referencia para acompañar su desarrollo.</p>
+        </div>
+        <div class="weather-panel" aria-live="polite" aria-atomic="true" aria-busy="true" id="weather-panel">
+          <p id="weather-status" role="status">Cargando las condiciones meteorológicas…</p>
+          <div id="weather-data" hidden>
+            <p class="weather-condition">
+              <span class="weather-icon" id="weather-icon" aria-hidden="true"></span>
+              <span id="weather-description"></span>
+            </p>
+            <dl class="weather-readings">
+              <div>
+                <dt>Temperatura exterior</dt>
+                <dd id="weather-temperature"></dd>
+              </div>
+              <div>
+                <dt>Humedad relativa exterior</dt>
+                <dd id="weather-humidity"></dd>
+              </div>
+            </dl>
+            <p class="weather-updated" id="weather-updated" hidden></p>
+            <h3>Una pista para tu masa</h3>
+            <p class="weather-advice" id="weather-advice"></p>
+          </div>
+        </div>
+        <p class="weather-note">Los rangos son orientativos: la temperatura interior y la de la masa pueden ser diferentes de la exterior. Observá siempre el desarrollo de tu masa.</p>
+        <p class="weather-source">Datos meteorológicos: <a href="https://open-meteo.com/">Open-Meteo</a>.</p>
+        <noscript><p>Activá JavaScript para consultar el clima actual.</p></noscript>
+      </div>
+    </section>
+
     <!-- ENCONTRANOS (clon) -->
     <section class="section section-proyecto" id="proyecto" aria-labelledby="proyecto-title">
       <div class="container section-head section-head--center">
@@ -258,5 +295,6 @@
   <script src="js/translate.js?v=4" defer></script>
   <script src="js/recipes.js?v=4" defer></script>
   <script src="js/app.js?v=4" defer></script>
+  <script src="js/weather.js" type="module"></script>
 </body>
 </html>
