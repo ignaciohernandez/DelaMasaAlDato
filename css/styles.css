@@ -814,6 +814,41 @@ p:last-child { margin-bottom: 0; }
 }
 .section-weather .weather-updated { font-size: 0.8rem; color: var(--ink-soft); margin: 0 auto 24px; max-width: 540px; }
 .section-weather .weather-advice { margin: 14px auto 0; color: var(--ink-soft); max-width: 580px; text-wrap: pretty; }
+.section-weather .weather-explainer {
+  max-width: 680px;
+  margin: 28px auto 0;
+  border-top: 1px solid var(--line);
+  text-align: left;
+  color: var(--ink-soft);
+}
+.section-weather .weather-explainer summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 48px;
+  padding: 16px 0;
+  cursor: pointer;
+  list-style: none;
+  font-weight: 500;
+}
+.section-weather .weather-explainer summary::-webkit-details-marker { display: none; }
+.section-weather .weather-explainer summary::after {
+  content: '+';
+  flex: none;
+  font-size: 1.4rem;
+  line-height: 1;
+  color: var(--accent-dark);
+}
+.section-weather .weather-explainer[open] summary::after { content: '−'; }
+.section-weather .weather-explainer summary:hover { color: var(--accent-dark); }
+.section-weather .weather-explainer summary:focus-visible {
+  outline: 2px solid var(--accent-dark);
+  outline-offset: 4px;
+}
+.section-weather .weather-explainer-body { padding: 0 0 8px; font-size: 0.9rem; }
+.section-weather .weather-explainer-body p { margin: 0 0 14px; }
+.section-weather .weather-explainer-body p:last-child { margin-bottom: 0; }
 .section-weather .weather-note { margin-top: 24px; max-width: 800px; font-size: 0.9rem; color: var(--ink-soft); }
 .section-weather .weather-source { font-size: 0.8rem; color: var(--ink-soft); }
 .section-weather .weather-source a { text-decoration: underline; text-underline-offset: 4px; }
