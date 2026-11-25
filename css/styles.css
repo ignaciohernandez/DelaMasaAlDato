@@ -783,3 +783,60 @@ p:last-child { margin-bottom: 0; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
 }
+
+/* --------------------------------------------------------------------------
+   El clima también cocina — estilos limitados a esta sección
+   -------------------------------------------------------------------------- */
+.section-weather { background: var(--cream-deep); }
+.section-weather h2 { margin-bottom: 24px; }
+.section-weather .weather-panel {
+  padding: clamp(24px, 4vw, 40px);
+  border: 1px solid var(--line);
+  background: var(--paper);
+  text-align: center;
+}
+.section-weather .weather-readings {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(16px, 4vw, 48px);
+  max-width: 680px;
+  margin: 0 auto 24px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--line);
+}
+.section-weather .weather-readings > div { min-width: 0; }
+.section-weather .weather-readings dt { font-size: 0.85rem; color: var(--ink-soft); }
+.section-weather .weather-readings dd {
+  margin: 8px 0 0;
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1.15;
+}
+.section-weather .weather-updated { font-size: 0.8rem; color: var(--ink-soft); margin: 0 auto 24px; max-width: 540px; }
+.section-weather .weather-advice { margin: 14px auto 0; color: var(--ink-soft); max-width: 580px; text-wrap: pretty; }
+.section-weather .weather-note { margin-top: 24px; max-width: 800px; font-size: 0.9rem; color: var(--ink-soft); }
+.section-weather .weather-source { font-size: 0.8rem; color: var(--ink-soft); }
+.section-weather .weather-source a { text-decoration: underline; text-underline-offset: 4px; }
+.section-weather [hidden] { display: none; }
+.section-weather .weather-condition {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  max-width: 540px;
+  margin: 0 auto 24px;
+  color: var(--ink-soft);
+}
+.section-weather .weather-condition > span { min-width: 0; overflow-wrap: anywhere; }
+.section-weather .weather-icon { display: inline-flex; flex: 0 0 48px; color: var(--accent-dark); }
+.section-weather .weather-icon svg { width: 48px; height: 52px; }
+
+@media (max-width: 620px) {
+  .section-weather .weather-readings { gap: 16px; padding-bottom: 24px; }
+  .section-weather .weather-readings dt { font-size: 0.75rem; }
+  .section-weather .weather-readings dd { font-size: clamp(2rem, 7vw, 2.75rem); }
+}
+
+@media (max-width: 360px) {
+  .section-weather .weather-readings { grid-template-columns: 1fr; gap: 20px; }
+}
