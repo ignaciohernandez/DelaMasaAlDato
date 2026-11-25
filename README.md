@@ -4,6 +4,7 @@
 
 Modelo visual: una boulangerie francesa de Buenos Aires (solo como referencia de diseño).
 Fuente interna de las recetas: [TheMealDB](https://www.themealdb.com/api.php) (pública, sin key, sin registro).
+Fuente del clima: [Open-Meteo](https://open-meteo.com/), consultada desde el navegador sin clave de API.
 
 ## Idea
 
@@ -11,6 +12,8 @@ Se reproduce la estructura visual de una boulangerie porteña (hero, secciones n
 tarjetas de productos, bloque de dato curioso y footer), pero con logo, textos y fotos propios.
 Se agrega una funcionalidad nueva: **El Recetario**, una sección que consume recetas
 reales de TheMealDB.
+También se incorpora **El clima también cocina**, una sección con las condiciones
+exteriores actuales de Buenos Aires y un consejo orientativo para la fermentación de masas.
 
 En la página las recetas se presentan como propias y en español: ni la fuente de los
 datos ni la traducción se mencionan en ningún texto visible.
@@ -29,11 +32,13 @@ de la API (el dato).
 - Fotos de las recetas guardadas en el proyecto, sin pedirlas al navegar.
 - Estados de carga (skeletons), sin resultados y error de conexión.
 - Diseño responsive con flexbox y CSS Grid.
+- Panel de clima con temperatura, humedad, estado meteorológico e íconos SVG propios,
+  además de un consejo de fermentación según la temperatura exterior.
 
 ## Estructura
 
 ```
-├── index.html          # marcado del sitio + sección El Recetario
+├── index.html          # marcado del sitio + secciones El Recetario y Clima
 ├── css/styles.css      # estilos, responsive y animaciones
 ├── js/
 │   ├── api.js          # requests a TheMealDB
@@ -41,6 +46,7 @@ de la API (el dato).
 │   ├── translate.js    # traducción al español + caché
 │   ├── favorites.js    # localStorage
 │   ├── recipes.js      # render de tarjetas, skeletons y modal
+│   ├── weather.js      # consulta a Open-Meteo, estado del clima y consejo de fermentación
 │   └── app.js          # estado, eventos y coordinación
 └── assets/
     ├── logo-dark.svg             # header
@@ -100,6 +106,8 @@ Cada push a `main` actualiza el sitio automáticamente.
 
 ## Endpoints usados
 
+### Recetas (TheMealDB)
+
 | Endpoint | Uso |
 | --- | --- |
 | `GET /filter.php?c=Dessert` | Grilla inicial |
@@ -110,6 +118,48 @@ Cada push a `main` actualiza el sitio automáticamente.
 | `GET /lookup.php?i=<id>` | Detalle de una receta |
 
 Base URL: `https://www.themealdb.com/api/json/v1/1`
+
+### Clima (Open-Meteo)
+
+Endpoint: `GET https://api.open-meteo.com/v1/forecast`.
+
+| Parámetro | Valor | Uso |
+| --- | --- | --- |
+| `latitude` | `-34.61` | Latitud fija de Buenos Aires |
+| `longitude` | `-58.38` | Longitud fija de Buenos Aires |
+| `current` | `temperature_2m,relative_humidity_2m,weather_code,is_day` | Temperatura, humedad, código meteorológico e indicador de día/noche |
+| `timezone` | `America/Argentina/Buenos_Aires` | Hora local de los datos |
+
+## Clima y fermentación
+
+`js/weather.js` funciona como un módulo independiente del recetario y consulta
+Open-Meteo una vez al cargar la página. No requiere configurar claves, usar
+geolocalización ni levantar un backend: la ubicación consultada siempre es Buenos Aires.
+Para actualizar los datos, se recarga la página.
+
+- Muestra la temperatura en °C y la humedad relativa en %, con formato numérico argentino.
+- Interpreta los códigos meteorológicos WMO con descripciones en español e íconos SVG
+  propios; usa sol o luna según el indicador de día/noche. Si el código es desconocido,
+  muestra que el estado del clima no está disponible.
+- Muestra la fecha y hora de actualización devuelta por la API en horario de Buenos Aires,
+  cuando el dato tiene un formato válido.
+- Ofrece un consejo orientativo según la temperatura exterior:
+
+| Temperatura | Consejo |
+| --- | --- |
+| Menos de 18 °C | La fermentación puede ser más lenta; dar tiempo y observar la masa |
+| Entre 18 y 26 °C, inclusive | Controlar el desarrollo de la masa durante la fermentación |
+| Más de 26 °C | Revisar la masa con mayor frecuencia porque puede fermentar más rápido |
+
+La sección aclara que la temperatura interior y la de la masa pueden diferir de la
+exterior. La humedad se muestra como dato informativo; el consejo depende de la temperatura.
+
+La consulta tiene un tiempo límite de 12 segundos y valida la temperatura, el rango
+de humedad y sus unidades antes de mostrar los datos. Durante la carga se informa
+el estado; si falla la conexión, vence el tiempo límite o los datos no son válidos,
+se muestra un mensaje para recargar la página y no se ofrece un consejo sin datos.
+El panel comunica sus cambios mediante atributos de accesibilidad (`aria-live` y
+`aria-busy`) e incluye un aviso cuando JavaScript está desactivado.
 
 ## Traducción (detalle interno)
 
@@ -131,4 +181,4 @@ Logo, textos y fotografías del sitio son propios; las fotos son imágenes gené
 de panadería y cocina. Los datos de las recetas provienen de TheMealDB y sus fotos
 se copiaron al proyecto; todas son propiedad de sus respectivos autores. La fuente,
 las imágenes y la traducción se documentan acá y en el código, pero no se muestran
-en la interfaz.
+en la interfaz. La sección de clima sí incluye un enlace de atribución a Open-Meteo.
